@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from "react";
 import { DataGrid } from '@mui/x-data-grid';
 import Avatar from '@mui/material/Avatar';
-import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
+import { Card, CardContent, CardHeader, Typography } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack';
@@ -24,6 +24,7 @@ const DataTable = () => {
     useEffect(() => {
         initialidatafetch()
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const initialidatafetch = () => {
@@ -60,7 +61,7 @@ const DataTable = () => {
                 return (
                     <>
                         <Stack direction="row" spacing={1}>
-                            {record.row.roles.map((item) => <Chip label={item} size="small" />
+                            {record.row.roles.map((item) => <Chip key={item} label={item} size="small" />
                             )
                             }</Stack></>
                 )
